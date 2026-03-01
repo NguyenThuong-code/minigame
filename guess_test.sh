@@ -10,7 +10,7 @@ TOTAL_REQUESTS="${TOTAL_REQUESTS:-100}"
 CONCURRENCY="${CONCURRENCY:-20}"
 ENDPOINT_GUESS="${ENDPOINT_GUESS:-/api/game/guess}"
 ENDPOINT_BUY="${ENDPOINT_BUY:-/api/game/buy-turns}"
-OUTDIR="${OUTDIR:-./stress_out}"
+OUTDIR="${OUTDIR:-./guess_out}"
 
 # ---------- HELPERS ----------
 need() { command -v "$1" >/dev/null 2>&1; }
@@ -19,7 +19,7 @@ need() { command -v "$1" >/dev/null 2>&1; }
 if [[ -z "$TOKEN" ]]; then
   echo "ERROR: TOKEN is empty."
   echo "Usage (Git Bash):"
-  echo '  TOKEN="eyJ..." BASE_URL="http://localhost:8080" bash stress_test.sh'
+  echo '  TOKEN="eyJ..." BASE_URL="http://localhost:8080" bash guess_test.sh'
   exit 1
 fi
 
