@@ -1,0 +1,282 @@
+{
+  "info": {
+    "_postman_id": "ea0fab91-9cb7-45b6-acb3-1c14ce68b00b",
+    "name": "minigame",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "18230398"
+  },
+  "item": [
+    {
+      "name": "register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"namdv\",\n    \"email\": \"namdv@gmail.com\",\n    \"password\": \"Password@123\",\n    \"firstName\": \"nam\",\n    \"lastName\": \"nguyen\",\n    \"phoneNumber\": \"0123456789\"\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"namdv\",\n    \"password\": \"Password@123\"\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "type": "text",
+              "key": "grant_type",
+              "value": "password"
+            },
+            {
+              "type": "text",
+              "key": "client_id",
+              "value": "mini-game"
+            },
+            {
+              "type": "text",
+              "key": "client_secret",
+              "value": "VcrTaWllAXsMPQutNDU6XEKyAao7vnKB"
+            },
+            {
+              "type": "text",
+              "key": "username",
+              "value": "thuongnv1"
+            },
+            {
+              "type": "text",
+              "key": "password",
+              "value": "Password@123"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8083/realms/minigame/protocol/openid-connect/token",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "realms",
+            "minigame",
+            "protocol",
+            "openid-connect",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ2aWRDa2tNb2tlUDhKa1VTZ25SN0JYZ0kzNzB0LUNraFM1NmQ4N0hpLWl3In0.eyJleHAiOjE3NzIxNjIwNTUsImlhdCI6MTc3MjE2MTc1NSwianRpIjoiZGE3NGU4YTEtNzIxMy00MGE1LWE4YzEtNWViNjhhZWY1OTI4IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgzL3JlYWxtcy9taW5pZ2FtZSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1MWI5NjgwMi02OWE0LTQ1MWItYjA3ZS0xMmUzMWIzODYwNzgiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtaW5pLWdhbWUiLCJzZXNzaW9uX3N0YXRlIjoiNzZjODBmZmItZTljOC00OGZmLWFhNzQtZjZmN2Y5N2NjYmUxIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vbG9jYWxob3N0OjgwODAiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbWluaWdhbWUiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiVVNFUiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6Ijc2YzgwZmZiLWU5YzgtNDhmZi1hYTc0LWY2ZjdmOTdjY2JlMSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoidGh1b25nIG5ndXllbiIsInByZWZlcnJlZF91c2VybmFtZSI6InRodW9uZ252MSIsImdpdmVuX25hbWUiOiJ0aHVvbmciLCJmYW1pbHlfbmFtZSI6Im5ndXllbiIsImVtYWlsIjoidGh1b25nbnYxQGdtYWlsLmNvbSJ9.TJ9HDiWtPi_7vq60jgHot9eTq9m5UoDD63L77N_y3vr-lKQFyhojQGpoJJFMmDfboHQayxDkowbOkl3yBJa3XT1oAwqjRg9D2WoyrkZupZjlXFP82-stgLTU7pEARC_AFhjXUcFN_Xp2NNifSKGP6iccHB4xL2STldSJ2IFppZZpK1rbGaXE_NyKMmja_2xkXOsZjw9gLvyo22lkN9WzotKHhb_tyj-4Iu992Xy4s0M3_sM6HP12IZd8jqQ6W5a4yvi1FHRiHGM1BD1ECLJ_xLFzrJQJ9AURbNoMhSt_97HdV9L4I0qrDsNfcfBWom52hzswSc3i-Cunfp4gk6D_Vw",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/users/me",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "users",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "buy turn",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ2aWRDa2tNb2tlUDhKa1VTZ25SN0JYZ0kzNzB0LUNraFM1NmQ4N0hpLWl3In0.eyJleHAiOjE3NzIzNjE5NzEsImlhdCI6MTc3MjM2MTY3MSwianRpIjoiZTcwNjJlMTMtYThmZi00NDdmLWE0ZDEtMTdkMjcxOGQxODhhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgzL3JlYWxtcy9taW5pZ2FtZSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOTRkMzk0NS0zNjVmLTQyZmYtYTNkYy0zNTljMjFkZmQzYzQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtaW5pLWdhbWUiLCJzZXNzaW9uX3N0YXRlIjoiOTk0MGQ0NjYtNTJhZC00NzE2LTlhMzktNDcyODY3NjJiMGM3IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vbG9jYWxob3N0OjgwODAiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbWluaWdhbWUiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiVVNFUiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6Ijk5NDBkNDY2LTUyYWQtNDcxNi05YTM5LTQ3Mjg2NzYyYjBjNyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoibmFtIG5ndXllbiIsInByZWZlcnJlZF91c2VybmFtZSI6Im5hbWR2IiwiZ2l2ZW5fbmFtZSI6Im5hbSIsImZhbWlseV9uYW1lIjoibmd1eWVuIiwiZW1haWwiOiJuYW1kdkBnbWFpbC5jb20ifQ.O3H13IW83qTdrb4WEMdez_R7_IzuYqi6esvAaxEXu8XLN3Vck85sK-JXwT6PZtMttITp55HYKgd3QkJiEPOBviMyuszqbpUJvvbGHtVjrQdAck1TLX7_mq-huYPW2tnTkgnUuzOBpe6uw0FyrHijkxXX61Gowv3lLabKhmiKLljbVsMTVn1l7pzIukxC0oMxEN6vPRmu5-_gyYyKxbRA9NU5ukZE63ssXQJUVa81-DssX9vxnAJs4Uosq8ZdqQK5X8_fDfITu822vi_s_MO8NU-TJ1seIOJQXpcMV7ATGG4nPR-ZGH7YlFR3ftbJFsuObqjgGKdDEzZhQQYeVs_MXA"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/game/buy-turns",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "game",
+            "buy-turns"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "guess",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ2aWRDa2tNb2tlUDhKa1VTZ25SN0JYZ0kzNzB0LUNraFM1NmQ4N0hpLWl3In0.eyJleHAiOjE3NzIzNjE5NzEsImlhdCI6MTc3MjM2MTY3MSwianRpIjoiZTcwNjJlMTMtYThmZi00NDdmLWE0ZDEtMTdkMjcxOGQxODhhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgzL3JlYWxtcy9taW5pZ2FtZSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOTRkMzk0NS0zNjVmLTQyZmYtYTNkYy0zNTljMjFkZmQzYzQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtaW5pLWdhbWUiLCJzZXNzaW9uX3N0YXRlIjoiOTk0MGQ0NjYtNTJhZC00NzE2LTlhMzktNDcyODY3NjJiMGM3IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vbG9jYWxob3N0OjgwODAiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbWluaWdhbWUiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiVVNFUiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6Ijk5NDBkNDY2LTUyYWQtNDcxNi05YTM5LTQ3Mjg2NzYyYjBjNyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoibmFtIG5ndXllbiIsInByZWZlcnJlZF91c2VybmFtZSI6Im5hbWR2IiwiZ2l2ZW5fbmFtZSI6Im5hbSIsImZhbWlseV9uYW1lIjoibmd1eWVuIiwiZW1haWwiOiJuYW1kdkBnbWFpbC5jb20ifQ.O3H13IW83qTdrb4WEMdez_R7_IzuYqi6esvAaxEXu8XLN3Vck85sK-JXwT6PZtMttITp55HYKgd3QkJiEPOBviMyuszqbpUJvvbGHtVjrQdAck1TLX7_mq-huYPW2tnTkgnUuzOBpe6uw0FyrHijkxXX61Gowv3lLabKhmiKLljbVsMTVn1l7pzIukxC0oMxEN6vPRmu5-_gyYyKxbRA9NU5ukZE63ssXQJUVa81-DssX9vxnAJs4Uosq8ZdqQK5X8_fDfITu822vi_s_MO8NU-TJ1seIOJQXpcMV7ATGG4nPR-ZGH7YlFR3ftbJFsuObqjgGKdDEzZhQQYeVs_MXA"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"number\":1}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/game/guess",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "game",
+            "guess"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "me",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ2aWRDa2tNb2tlUDhKa1VTZ25SN0JYZ0kzNzB0LUNraFM1NmQ4N0hpLWl3In0.eyJleHAiOjE3NzIzNjE5NzEsImlhdCI6MTc3MjM2MTY3MSwianRpIjoiZTcwNjJlMTMtYThmZi00NDdmLWE0ZDEtMTdkMjcxOGQxODhhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgzL3JlYWxtcy9taW5pZ2FtZSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOTRkMzk0NS0zNjVmLTQyZmYtYTNkYy0zNTljMjFkZmQzYzQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtaW5pLWdhbWUiLCJzZXNzaW9uX3N0YXRlIjoiOTk0MGQ0NjYtNTJhZC00NzE2LTlhMzktNDcyODY3NjJiMGM3IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vbG9jYWxob3N0OjgwODAiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbWluaWdhbWUiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiVVNFUiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6Ijk5NDBkNDY2LTUyYWQtNDcxNi05YTM5LTQ3Mjg2NzYyYjBjNyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoibmFtIG5ndXllbiIsInByZWZlcnJlZF91c2VybmFtZSI6Im5hbWR2IiwiZ2l2ZW5fbmFtZSI6Im5hbSIsImZhbWlseV9uYW1lIjoibmd1eWVuIiwiZW1haWwiOiJuYW1kdkBnbWFpbC5jb20ifQ.O3H13IW83qTdrb4WEMdez_R7_IzuYqi6esvAaxEXu8XLN3Vck85sK-JXwT6PZtMttITp55HYKgd3QkJiEPOBviMyuszqbpUJvvbGHtVjrQdAck1TLX7_mq-huYPW2tnTkgnUuzOBpe6uw0FyrHijkxXX61Gowv3lLabKhmiKLljbVsMTVn1l7pzIukxC0oMxEN6vPRmu5-_gyYyKxbRA9NU5ukZE63ssXQJUVa81-DssX9vxnAJs4Uosq8ZdqQK5X8_fDfITu822vi_s_MO8NU-TJ1seIOJQXpcMV7ATGG4nPR-ZGH7YlFR3ftbJFsuObqjgGKdDEzZhQQYeVs_MXA"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/user/me",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "user",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "leaderboard",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ2aWRDa2tNb2tlUDhKa1VTZ25SN0JYZ0kzNzB0LUNraFM1NmQ4N0hpLWl3In0.eyJleHAiOjE3NzIzNjE5NzEsImlhdCI6MTc3MjM2MTY3MSwianRpIjoiZTcwNjJlMTMtYThmZi00NDdmLWE0ZDEtMTdkMjcxOGQxODhhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgzL3JlYWxtcy9taW5pZ2FtZSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOTRkMzk0NS0zNjVmLTQyZmYtYTNkYy0zNTljMjFkZmQzYzQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJtaW5pLWdhbWUiLCJzZXNzaW9uX3N0YXRlIjoiOTk0MGQ0NjYtNTJhZC00NzE2LTlhMzktNDcyODY3NjJiMGM3IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vbG9jYWxob3N0OjgwODAiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbWluaWdhbWUiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiVVNFUiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6Ijk5NDBkNDY2LTUyYWQtNDcxNi05YTM5LTQ3Mjg2NzYyYjBjNyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoibmFtIG5ndXllbiIsInByZWZlcnJlZF91c2VybmFtZSI6Im5hbWR2IiwiZ2l2ZW5fbmFtZSI6Im5hbSIsImZhbWlseV9uYW1lIjoibmd1eWVuIiwiZW1haWwiOiJuYW1kdkBnbWFpbC5jb20ifQ.O3H13IW83qTdrb4WEMdez_R7_IzuYqi6esvAaxEXu8XLN3Vck85sK-JXwT6PZtMttITp55HYKgd3QkJiEPOBviMyuszqbpUJvvbGHtVjrQdAck1TLX7_mq-huYPW2tnTkgnUuzOBpe6uw0FyrHijkxXX61Gowv3lLabKhmiKLljbVsMTVn1l7pzIukxC0oMxEN6vPRmu5-_gyYyKxbRA9NU5ukZE63ssXQJUVa81-DssX9vxnAJs4Uosq8ZdqQK5X8_fDfITu822vi_s_MO8NU-TJ1seIOJQXpcMV7ATGG4nPR-ZGH7YlFR3ftbJFsuObqjgGKdDEzZhQQYeVs_MXA"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/user/leaderboard",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "user",
+            "leaderboard"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"correct":false,"randomNumber":5,"remainingTurns":6,"currentScore":4,"message":"Wrong! (5% win-rate)"}
