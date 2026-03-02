@@ -246,8 +246,11 @@ Fields:
 -   updated_at
 
 ------------------------------------------------------------------------
+# 10. env
+  DB_PASSWORD=postgres;DB_USERNAME=postgres;KEYCLOAK_ADMIN_PASSWORD=admin;KEYCLOAK_ADMIN_USERNAME=admin;KEYCLOAK_CLIENT_ID=mini-game;KEYCLOAK_CLIENT_SECRET=VcrTaWllAXsMPQutNDU6XEKyAao7vnKB;KEYCLOAK_ISSUER_URI=http://localhost:8083/realms/minigame;KEYCLOAK_REALM=minigame;KEYCLOAK_SERVER_URL=http://localhost:8083
+------------------------------------------------------------------------
 
-# 10. Security Architecture
+# 11. Security Architecture
 
 -   Passwords stored only in Keycloak
 -   Stateless JWT validation
@@ -257,7 +260,7 @@ Fields:
 
 ------------------------------------------------------------------------
 
-# 11. Testing
+# 12. Testing
 - import minigame.postman_collection.json to postman to test api(change Bearer token in Authorization header)
 - Result test for one user sent many requests /guess at the same time(Result test in stress_out) 
 ## Step1 
