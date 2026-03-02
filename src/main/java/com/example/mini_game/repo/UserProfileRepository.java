@@ -1,14 +1,11 @@
 package com.example.mini_game.repo;
 
-import com.example.mini_game.entity.Role;
 import com.example.mini_game.entity.UserProfile;
 import jakarta.persistence.LockModeType;
 import jakarta.persistence.QueryHint;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.data.repository.query.Param;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface UserProfileRepository extends JpaRepository<UserProfile, Long> {
@@ -26,5 +23,5 @@ public interface UserProfileRepository extends JpaRepository<UserProfile, Long> 
 
     Optional<UserProfile> findByKeycloakId(String keycloakId);
     Optional<UserProfile> findByEmail(String email);
-    List<UserProfile> findByRole(Role role);
+
 }

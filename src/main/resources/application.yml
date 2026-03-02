@@ -54,3 +54,15 @@ keycloak:
   client-secret: ${KEYCLOAK_CLIENT_SECRET}
   admin-username: ${KEYCLOAK_ADMIN_USERNAME}
   admin-password: ${KEYCLOAK_ADMIN_PASSWORD}
+
+vnpay:
+  tmn-code: ${VNP_TMN_CODE}
+  hash-secret: ${VNP_HASH_SECRET}
+  pay-url: "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html"
+  return-url: "https://delmer-unspattered-merry.ngrok-free.dev/api/payments/vnpay/return"
+  ipn-url: "https://delmer-unspattered-merry.ngrok-free.dev/api/payments/vnpay/ipn"
+  order-type: "other"
+  locale: "vn"
+  curr-code: "VND"
+  buy-turns-amount: 5
+  buy-turns-price-vnd: 10000

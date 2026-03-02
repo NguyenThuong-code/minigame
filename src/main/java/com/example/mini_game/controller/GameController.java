@@ -1,6 +1,5 @@
 package com.example.mini_game.controller;
 
-import com.example.mini_game.dto.BuyTurnsResponse;
 import com.example.mini_game.dto.GuessRequest;
 import com.example.mini_game.dto.GuessResponse;
 import com.example.mini_game.service.GameService;
@@ -32,9 +31,4 @@ public class GameController {
         return ResponseEntity.ok(response);
     }
 
-    @PostMapping("/buy-turns")
-    public ResponseEntity<BuyTurnsResponse> buyTurns(@AuthenticationPrincipal Jwt jwt) {
-        String keycloakId = jwt.getSubject();
-        return ResponseEntity.ok(gameService.buyTurns(keycloakId));
-    }
 }

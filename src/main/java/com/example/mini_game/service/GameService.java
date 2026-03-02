@@ -75,21 +75,6 @@ public class GameService {
                 .message(correct ? "Correct!" : "Wrong!")
                 .build();
     }
-    @Transactional
-    public BuyTurnsResponse buyTurns(String keycloakId) {
-        int updated = userProfileRepository.addTurns(keycloakId, BUY_TURNS_AMOUNT);
-        if (updated == 0) throw new RuntimeException("User not found");
-        int totalTurns = userProfileRepository.findByKeycloakId(keycloakId)
-                .orElseThrow(() -> new RuntimeException("User not found"))
-                .getTurns();
-
-        return BuyTurnsResponse.builder()
-                .addedTurns(BUY_TURNS_AMOUNT)
-                .totalTurns(totalTurns)
-                .message("Added 5 turns successfully")
-                .build();
-    }
-
     private int randomDifferentFrom(int guess) {
        int r = rng.nextInt(1, 5);
         return (r >= guess) ? r + 1 : r;
